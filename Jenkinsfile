@@ -3,8 +3,10 @@ pipeline {
     stages {
         stage("build") {
             steps {
-                // sh 'npm install'
-                // sh 'npm build'
+                nodejs('Node-16.2.0') {
+                    sh 'npm install'
+                    sh 'npm run build'
+                }
                 echo 'BUILD'
             }
         }
